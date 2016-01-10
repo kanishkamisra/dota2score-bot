@@ -17,5 +17,7 @@ class DotaSpider(scrapy.Spider):
         for link in all_links:
             teams.append(link.split('&')[1].split('=')[1])
             links.append("http://www.datdota.com/%s" % (link))
+            with open ("teams.txt",'wb') as f:
+				f.write(str(teams))
 
         print teams
